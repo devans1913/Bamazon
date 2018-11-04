@@ -12,7 +12,7 @@ Install the required dependencies
 
 ##### $ node bamazonCustomer.js : 
 This will first display all of the items available for sale and include the ID#, Product Name and Price.
-![Screen shot](./Images/Step4.JPG)
+![Screen shot](./Images/first.JPG)
 
 ##### Step 3: Enter the Product ID you would like to buy
 ![Screen shot](./Images/Step1.JPG)
@@ -25,7 +25,7 @@ If the store has enough merchandise, then the order will be fullfilled and the c
 
 If the merchandise is out of stock, the customer will be notified: "There isn't enough stock left!"
 
-![Screen shot](./Images/Step3.JPG)
+![Screen shot](./Images/last.JPG)
 
 #### Technologies Used:
 
