@@ -24,6 +24,7 @@ This will first display all of the items available for sale and include the ID#,
 If the store has enough merchandise, then the order will be fullfilled and the customer will be notified: "Yay, your purchase is complete. Payment has been received in the amount of:..."
 
 If the merchandise is out of stock, the customer will be notified: "There isn't enough stock left!"
+
 ![Screen shot](./Images/Step3.JPG)
 
 #### Technologies Used:
