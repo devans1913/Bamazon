@@ -7,7 +7,7 @@ var connection = mysql.createConnection({
   host: "localhost",
   port: 3306,
   user: "root",
-  password: "VeriShip$18",
+  password: "",
   database: "BamazonDB"
 });
 
@@ -37,7 +37,7 @@ var displayProducts = function() {
 	});
 };
 
-// Requests product and number of product items user wishes to purchase.
+// Requests product and number of product items
 var requestProduct = function() {
 	inquirer.prompt([{
 		name: "productID",
@@ -72,14 +72,13 @@ var requestProduct = function() {
 			var productSales = res[0].product_sales;
 			var productDepartment = res[0].department_name;
 
-			// Checks there's enough inventory  to process user's request.
+			// Checks to see if there's enough inventory  to process the request.
 			if (available_stock >= answer.productUnits) {
 
-				// Processes user's request passing in data to complete purchase.
 				completePurchase(available_stock, price_per_unit, productSales, productDepartment, answer.productID, answer.productUnits);
 			} else {
 
-				// Tells user there isn't enough stock left.
+				// If there's not enough merchandise left.
 				console.log("There isn't enough stock left!");
 
 				// Lets user request a new product.
@@ -93,16 +92,16 @@ var requestProduct = function() {
 // Completes user's request to purchase product.
 var completePurchase = function(availableStock, price, productSales, productDepartment, selectedProductID, selectedProductUnits) {
 	
-	// Updates stock quantity once purchase complete.
+	// Updates stock quantity 
 	var updatedStockQuantity = availableStock - selectedProductUnits;
 
-	// Calculates total price for purchase based on unit price, and number of units.
+	// Calculates total price 
 	var totalPrice = price * selectedProductUnits;
 
-	// Updates total product sales.
+	// Update total product sales.
 	var updatedProductSales = parseInt(productSales) + parseInt(totalPrice);
 	
-	// Updates stock quantity on the database based on user's purchase.
+	// Updates stock quantity 
 	var query = "UPDATE products SET ? WHERE ?";
 	connection.query(query, [{
 		stock_quantity: updatedStockQuantity,
@@ -142,7 +141,7 @@ var updateDepartmentRevenue = function(updatedProductSales, productDepartment) {
 	});
 };
 
-// Completes update to total sales for department on database.
+// Completes update to total sales
 var completeDepartmentSalesUpdate = function(updatedDepartmentSales, productDepartment) {
 
 	var query = "UPDATE departments SET ? WHERE ?";
