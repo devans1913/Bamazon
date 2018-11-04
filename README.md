@@ -8,8 +8,9 @@ The Bamazon Customer Portal allows users to view the current items available for
 (Images/bamazonSQL.JPG)
 
 ##### Step 2: Run Bamazon in Terminal
-1. Install the required dependencies 
-2. $ node bamazonCustomer.js : This will first display all of the items available for sale and include the ID#, Product Name and Price.
+Install the required dependencies 
+##### $ node bamazonCustomer.js : 
+This will first display all of the items available for sale and include the ID#, Product Name and Price.
 (Images/Step4.JPG)
 
 ##### Step 3: Enter the Product ID you would like to buy
